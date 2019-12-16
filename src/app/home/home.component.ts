@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router } from '@angular/router';
+import {DataService} from '../data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,16 +11,20 @@ export class HomeComponent implements OnInit {
   btnText:string="Add an Item"; 
   goalText:string="My first life goal"; 
   goals:any=[] ; 
-  constructor() { }
+  constructor(private router:Router, private dataService: DataService) { 
 
+this.goals=this.dataService.getGoal();
+}
   ngOnInit() {
   }
 
   Additem()
   {
-    this.goals.push(this.goalText); 
+    //this.goals.push(this.goalText); 
+    this.dataService.goals.push(this.goalText);
     this.goalText=""; 
-    this.itemCount=this.goals.length ; 
+    //this.itemCount=this.goals.length ; 
+    this.itemCount=this.dataService.goals.length;
   }
 
 }
