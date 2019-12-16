@@ -1,0 +1,22 @@
+<p>calculatrice</p>
+<div class="valeur 1">
+    taper A
+    <input type="number" name="val1" class="form-control" [(ngModel)]="val1">
+
+</div>
+<div class="valeur2">
+    taper B
+    <input type="number" name="val2" class="form-control" [(ngModel)]="val2">
+
+</div>
+<div class="opration">
+    <button type="button" class="btn btn-info" (click)="plus()">+</button>
+    <button type="button" class="btn btn-info" (click)="moin()">-</button>
+    <button type="button" class="btn btn-info" (click)="sur()">/</button>
+    <button type="button" class="btn btn-info" (click)="fois()">*</button>
+</div>
+<div class="from-groupe">
+    Ressultat
+    <input type="text" name="resultat" class="form-control" [(ngModel)]="res">
+
+</div>
